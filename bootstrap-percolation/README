@@ -1,0 +1,15 @@
+I wrote this code along with one other student as part of an undergraduate
+research project in 2008. The project investigated bootstrap percolation, a
+topic of current interest in probability. The classic bootstrap percolation
+model lives in the 2-dimensional integer lattice. At the beginning, each
+point is independently turned on with probability p, otherwise off. Then, 
+points that have at least two neighbors on themselves turn on. This process
+is repeated until it stabilizes - the question is, what is the probability
+that the entire plane has turned on? We analyzed a variant of this problem 
+in a higher-dimensional space.
+
+We wrote a prototype in Python, and once we had the simulation working, we 
+rewrote in C for speed. 
+
+This work was later incorporated into a paper:
+http://arxiv.org/abs/1202.5351
