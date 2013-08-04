@@ -1,0 +1,4 @@
+cron:
+- description: process reminders
+  url: /process
+  schedule: every 20 minutes synchronized

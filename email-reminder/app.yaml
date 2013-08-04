@@ -1,0 +1,25 @@
+application: solvinggames
+version: 4
+runtime: python
+api_version: 1
+
+inbound_services:
+- mail
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /scripts
+  static_dir: scripts
+
+- url: /process
+  script: helloworld.py
+  login: admin
+
+- url: /_ah/mail/.+
+  script: helloworld.py
+  login: admin
+
+- url: /.*
+  script: helloworld.py

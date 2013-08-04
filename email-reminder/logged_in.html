@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <h1><center>Email Reminder</center></h1>
+    <h3><a href="{{ url }}">Logout</a></h3>
+    <h3>Add Reminder</h3>
+    <form action="/add" method="post">
+      <div>send me <input type="text" name="message" size="60" value="reminder text"> in
+      <input type="text" name="days" size="3" value="1"> days</div>
+      <div><input type="submit" value="Add Reminder"></div>
+    </form>
+    <h3>Reminders for {{user.email}}</h3>
+    <table border=0>
+    {% for reminder in reminders %}
+      <tr><td>{{ reminder.message|escape }} @ {{reminder.datetime|date:"r"}}<td>
+      <form action="/delete" method="post"><input type="submit" value="x" style="height: 20px; width: 20px">
+      <input type="hidden" name="key" value="{{reminder.key}}"></form>
+    {% endfor %}
+    </table>
+
+
+  </body>
+</html>
+
+
+
