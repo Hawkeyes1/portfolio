@@ -9,3 +9,7 @@ Tower defense is self-describing.
 Collect the Dots is a dexterity game where dots materialize in random locations
 and there are also random obstacles. The dots always move toward your pointer,
 so you have to place it to bring the dots together as quickly as possible.
+
+The source code is in the folders. To run the games, get the love framework
+and download the packaged .love files (these are just renamed .zips of the
+source code folders).
