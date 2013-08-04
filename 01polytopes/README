@@ -1,0 +1,18 @@
+In 2009/2010 I was working on a research project on high-dimensional 0/1
+polytopes (i.e., all of whose vertices are in the unit hypercube). We were
+interested in, for a given dimension, what was the complexity of the normal
+vectors to facets of these polytopes? 
+
+For dimensions <= 3, the normal vectors to 0/1 polytopes are extremely simple,
+so there isn't an exact visualization of what is being studied. A reasonable
+way to think about it is to consider a regular n-gon in the plane. As n
+increases, there are more facets, and the equations defining them become 
+more complicated. We're studying something similar where instead of adding
+more points, we increase the dimension.
+
+For small dimensions (up to 5 or 6), I was able to reduce the problem by
+symmetry and apply brute force to solve it exactly. In higher dimensions, 
+there were too many possibilities (this problem grows as 2^2^n). I used
+simulated annealing as a heuristic to get reasonable approximations to
+the exact solution. From this approximate data we were able to guess the
+solution and then confirm it mathematically.
