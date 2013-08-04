@@ -1,0 +1,31 @@
+lvalue curr
+push 1
+assign
+lvalue prev
+push 0
+assign
+lvalue temp
+pop
+lvalue iterations
+push 10
+assign
+label loop
+rvalue curr
+lvalue temp
+rvalue curr
+assign
+lvalue curr
+rvalue prev
+rvalue curr
++
+assign
+lvalue prev
+rvalue temp
+assign
+lvalue iterations
+push 1
+rvalue iterations
+-
+assign
+rvalue iterations
+gotrue loop

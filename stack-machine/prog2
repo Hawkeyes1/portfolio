@@ -1,0 +1,5 @@
+lvalue foo
+push 5
+assign
+rvalue foo
+rvalue foo

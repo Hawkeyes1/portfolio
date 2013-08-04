@@ -1,0 +1,5 @@
+A simple stack machine simulation with three sample programs.
+
+Usage:
+
+python stackmachine.py progfile
