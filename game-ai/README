@@ -1,0 +1,9 @@
+I'm playing around with simple game AIs. I started by incorporating the rules
+of tic-tac-toe and connect-four, and using a simple negamax implementation. 
+The games are played on the command line:
+
+python connectfour.py 5
+
+python tictactoe.py 9
+
+(The argument is the depth the AI will search.)
