@@ -1,0 +1,11 @@
+I made these toy 2D games to play around with the nice Lua 2D game framework:
+
+https://love2d.org/
+
+Escape from Earth is a shooter in the style of Guxt by Pixel(cave story creator)
+
+Tower defense is self-describing.
+
+Collect the Dots is a dexterity game where dots materialize in random locations
+and there are also random obstacles. The dots always move toward your pointer,
+so you have to place it to bring the dots together as quickly as possible.
