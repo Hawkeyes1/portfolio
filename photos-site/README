@@ -1,0 +1,11 @@
+A static site generator for a photo gallery. I wrote this in 2009 to solve
+the "my parents don't use Facebook" problem when I wanted to share some
+photos with them. (I had no reason not to just use Flickr or something.)
+
+If I were to rewrite this again I'd just use Python and call libraries, as it
+would make it easier to make everything more general.
+
+One thing I'm "proud" of is my hacky solution here to only generate small
+versions of newly added files - I created a signatures/ folder with an empty
+file when I processsed a photo, as a way to store state across runs of the
+program. In retrospect I could have just checked for the filename in tiny/.
