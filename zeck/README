@@ -1,0 +1,32 @@
+Zeck is a combinatorial game. A strategy-stealing argument shows it to be
+first-player-win. However, the optimal strategy is not known in general.
+
+This program computes which positions are winning and losing for small cases.
+
+The rules of Zeck are as follows: the board starts as a m x n rectangle of dots:
+
+. . . .
+. . . .
+. . . .
+
+On your turn, you point to a dot and remove that dot, and anything in the 
+upper/right quadrant relative to that point. For instance, if we point here:
+
+. . . .
+. . X .
+. . . .
+
+then we remove the X and the three points above/right of X, so the board is:
+
+. .
+. .
+. . . .
+
+The game ends when someone takes the last move, necessarily pointing to the
+lower-left corner dot.
+
+Intermediate positions will always be the diagram of a partition, so we
+represent them as tuples. For instance, the initial position above is
+represented as (4,4,4), and the second position as (4,2,2). For now we would
+print these as 444 and 422 for brevity, assuming the user is only checking
+single-digit numbers.

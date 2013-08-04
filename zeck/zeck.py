@@ -51,7 +51,14 @@ def pp(p):
         out += str(x)
     return out
 
-for i in [7,8,9]:
+import sys
+try:
+    nums = [int(x) for x in sys.argv[1]]
+except:
+    print "Usage: python zeck.py 789\nwill analyze partitions of 7, 8, and 9."
+    sys.exit(0)
+
+for i in nums:
     print "PARTITIONS OF", i
     W, L = [], []
     for p in partitions(i):
@@ -61,5 +68,10 @@ for i in [7,8,9]:
             L.append(p)
     W.reverse()
     L.reverse()
-    print "WINS:",[pp(p) for p in W]
-    print "LOSSES:",[pp(p) for p in L]
+    print "WINS:",
+    for p in W:
+        print pp(p),
+    print ""
+    print "LOSSES:",
+    for p in L:
+        print pp(p),
