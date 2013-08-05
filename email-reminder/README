@@ -1,8 +1,5 @@
 This was a project I wrote to learn App Engine in 2011. It is an email
 reminder - you can type notes or tasks into it and they will be emailed
-to you at the time specified. You can also view and edit/delete your existing
-reminders.
+to you at the time specified. You can also view and delete.
 
-I took it down after finishing it due to the security concerns of leaving an
-unattended site running. Also, it might not work currently if the App Engine
-SDK has changed since 2011.
+The app is currently live at solvinggames.appspot.com
