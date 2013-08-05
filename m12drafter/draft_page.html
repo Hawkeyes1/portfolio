@@ -1,0 +1,22 @@
+
+
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <h1><center><a href="/">Magic 2012 Drafter</a></center></h1>
+    <h2>Booster Draft</h2>
+    <h3>Current Pack</h3>
+    {% for card in pack %}
+        <a href="pick?key={{key}}&card={{card}}"><img src="small/{{card}}.jpg"/></a>
+    {% endfor %}
+    <h3>Cards Chosen</h3>
+    {% for card in deck %}
+        <img src="small/{{card}}.jpg"/>
+    {% endfor %}
+  </body>
+</html>
+
+
+

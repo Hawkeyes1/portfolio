@@ -1,0 +1,83 @@
+
+
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <script type="text/javascript">
+    function toggle() {
+        var id = this.getAttribute('num');
+        var src = this.getAttribute('section');
+        var me = this;
+        // Mess with the server to actually change the deck
+        var req = new XMLHttpRequest();
+        clientside = function() {
+                var image = document.createElement("img");
+                image.setAttribute('src', 'small/'+id+'.jpg');
+                image.setAttribute('num', id);
+                image.onclick = toggle;
+                if (src == 'cards') {
+                    var last = document.getElementById("lastSideboard");
+                    image.setAttribute('section', 'sideboard');
+                } else {
+                    last = document.getElementById("lastCards");
+                    image.setAttribute('src', 'small/'+id+'.jpg');
+                    image.setAttribute('section', 'cards');
+                }
+                var parentDiv = last.parentNode;
+                parentDiv.insertBefore(image, last);
+                var parent = me.parentNode;
+                parent.removeChild(me);
+        }
+        req.onreadystatechange = function (aEvt) {
+          if (req.readyState == 4) {
+             if(req.status == 200) {
+                // Purely client side, move the image between deck and sideboard.
+                clientside();
+             } 
+          }
+        };
+        req.open('GET', '/toggle?key={{deck.key}}&card='+id+'&source='+src+"&" + (new Date()).getTime(), true);
+        req.send(null);
+
+    };
+    function initHandlers()
+         {
+             var images = document.getElementsByTagName("img");
+                          
+             for (var i = 0; i < images.length; ++i) {
+             
+                var item = images[i];  // Calling myNodeList.item(i) isn't necessary in JavaScript
+                
+                item.onclick = toggle;
+             }
+
+         };
+
+    </script>
+  </head>
+  <body onload="initHandlers();">
+    <h1><center><a href="/">Magic 2012 Drafter</a></center></h1>
+    <a href="{{logout_url}}">Logout</a>
+    <h2>{{deck.name}}</h2>
+    <form action="/rename" method="post">
+      <input type="text" name="name" size="60" value=""><input type="hidden" name="key" size="60" value="{{deck.key}}"><input type="submit" value="Rename">
+    </form>
+    <h3>Deck</h3>
+    <div>
+    {% for card in deck.cards %}
+        <img src="small/{{card}}.jpg" num="{{card}}" section="cards"/>
+    {% endfor %}
+    <span id="lastCards"></span>
+    </div>
+    <h3>Sideboard</h3>
+    <div>
+    {% for card in deck.sideboard %}
+      <img src="small/{{card}}.jpg" num="{{card}}" section="sideboard"/>
+    {% endfor %}
+    <span id="lastSideboard"></span>
+    </div>
+  </body>
+</html>
+
+
+

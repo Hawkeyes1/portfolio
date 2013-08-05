@@ -1,0 +1,18 @@
+application: m12drafter
+version: 4
+runtime: python
+api_version: 1
+
+builtins:
+- datastore_admin: on
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+- url: /small
+  static_dir: small
+- url: /title
+  static_dir: title
+
+- url: /.*
+  script: main.py

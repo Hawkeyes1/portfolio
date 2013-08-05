@@ -1,0 +1,6 @@
+I wrote this in summer 2011 to simulate a sealed deck or booster draft of
+Magic cards, so that my friends and I could get practice deckbuilding before 
+a tournament. For the draft portion, it makes picks based on public draft
+pick data - this part is not very accurate for a tournament simulation.
+
+The app is live at m12drafter.appspot.com

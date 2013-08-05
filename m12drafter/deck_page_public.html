@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <script type="text/javascript">
+    function rollover() {
+        var self=this;
+        var image = document.createElement("img");
+        image.setAttribute('src', self.getAttribute("link"));
+        var parent = self.parentNode;
+        parent.insertBefore(image, null);
+        self.onmouseout = function() {
+            parent.removeChild(image);
+        }
+        
+    }
+        function initHandlers()
+         {
+             var images = document.getElementsByTagName("span");
+             for (var i = 0; i < images.length; ++i) {
+                
+                var item = images[i];
+                if ( item.hasAttribute("link") ) {
+                     item.onmouseover = rollover;
+                  }
+             }
+
+         };
+
+    </script>
+  </head>
+  <body onload="initHandlers();">
+    <h1><center><a href="/">Magic 2012 Drafter</a></center></h1>
+    <h2>{{deck.name}} by {{deck.owner}}</h2>
+    <h3>Deck</h3>
+    {% for card in maindeck %}
+      <span><span link="small/{{card.num}}.jpg">{{card.name}}<br></span></span>
+    {% endfor %}
+    <h3>Sideboard</h3>
+    {% for card in sideboard %}
+      <span><span link="small/{{card.num}}.jpg">{{card.name}}<br></span></span>
+    {% endfor %}
+  </body>
+</html>
+
+
+

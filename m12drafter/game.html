@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <h1>You: life = {{life1}}</h1>
+    <h3>Hand</h3>
+    <table><tr>
+    {% for card in hand1 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+    <h3>Graveyard</h3>
+    <table><tr>
+    {% for card in graveyard1 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+    <h3>Library</h3>
+    <table><tr>
+    {% for card in library1 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+    <h1>Opponent: life = {{life2}}</h1>
+    <h3>Hand</h3>
+    <table><tr>
+    {% for card in hand2 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+    <h3>Graveyard</h3>
+    <table><tr>
+    {% for card in graveyard2 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+    <h3>Library</h3>
+    <table><tr>
+    {% for card in library2 %}
+      <td><img src="small/{{ card }}.jpg"/>
+    {% endfor %}
+    </table>
+  </body>
+</html>
+
+
+

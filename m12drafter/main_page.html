@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <h1><center>Magic 2012 Drafter</center></h1>
+    <ul>
+    <li><a href="new_sealed">New Sealed</a></li>
+    <li><a href="new_booster">New Booster Draft</a></li>
+    <li><a href="new_game">New Game</a></li>
+    <li><a href="{{logout_url}}">Logout</a></li>
+    </ul>
+    <h3>Your decks:</h3>
+    <table>
+    {% for r in rares %}
+    <img src=small/{{r}}.jpg>{{r}}<br>{% endfor %}
+    {% for deck in user_decks %}
+      <tr><td><a href="deck?key={{ deck.key }}">{{ deck.name }}</a> by {{deck.owner}}</td>
+      <td><form action="/delete_deck" method="post">
+      <input type="hidden" name="key" size="60" value="{{deck.key}}"><input type="submit" value="Delete">
+      </form>
+      </td></tr>
+    {% endfor %}
+    </table>
+    <h3>Public Decks:</h3>
+    <table>
+    {% for deck in public_decks %}
+      <tr><td><a href="deck?key={{ deck.key }}">{{ deck.name }}</a> by {{deck.owner}}</td></tr>
+    {% endfor %}
+    </table>
+    <h3>Drafts:</h3>
+    <table>
+    {% for draft in drafts %}
+      <tr><td><a href="draft?key={{ draft.key }}">draft</a> by {{draft.owner}}</td>
+      <td><form action="/delete_draft" method="post">
+      <input type="hidden" name="key" size="60" value="{{draft.key}}"><input type="submit" value="Delete">
+      </form>
+      </td></tr>
+    {% endfor %}
+    </table>
+        </table>
+    <h3>Games:</h3>
+    <table>
+    {% for game in games %}
+      <tr><td><a href="game?key={{ game.key }}">game</a></td>
+      <td><form action="/delete_game" method="post">
+      <input type="hidden" name="key" size="60" value="{{game.key}}"><input type="submit" value="Delete">
+      </form>
+      </td></tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
+
+
+
